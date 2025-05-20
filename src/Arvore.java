@@ -1,7 +1,11 @@
 public class Arvore {
     No raiz;
 
-    //Contando os nós da árvore
+    public Arvore() {
+        this.raiz = null;
+    }
+
+
     public int contarNos(No no) {
         if (no == null) {
             return 0;
