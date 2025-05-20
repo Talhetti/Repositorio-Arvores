@@ -7,7 +7,7 @@ public class Arvore {
     }
 
     /*Implementando contador int*/
-    private int contarNos(No no) {
+    public int contarNos(No no) {
         if (no == null) {
             return 0;
         }
@@ -22,6 +22,7 @@ public class Arvore {
             preOrdem(no.direito);
         }
     }
+
     /* Percorrendo os nós da Árvore Em-Ordem */
     public void emOrdem(No no){
         if(no != null){
