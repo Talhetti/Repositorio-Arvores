@@ -1,7 +1,6 @@
 public class No {
     int valor;
-    No esquerdo;
-    No direito;
+    No esquerdo, direito;
 
     public No(int valor) {
         this.valor = valor;
