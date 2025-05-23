@@ -109,7 +109,7 @@ public class Arvore {
     }
 
     /* Implementando a Pos Ordem Iterativa*/
-    public void porOrdemIterativo(No raiz){
+    public void posOrdemIterativo(No raiz){
         if (raiz == null) { return; }
 
         Stack<No> pilha1 = new Stack<>();
