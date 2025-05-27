@@ -12,9 +12,7 @@ public class Arvore {
 
     /*Implementando contador int*/
     public int contador(No no) {
-        if (no == null) {
-            return 0;
-        }
+        if (no == null) { return 0; }
         return 1 + contador(no.esquerdo) + contador(no.direito);
     }
 
@@ -26,20 +24,37 @@ public class Arvore {
         int contador = 0;
         // Criando a pilha para armazenar os nós
         Stack<No> pilha = new Stack<>();
-        //Adicionando o raiz
         pilha.add(raiz);
 
         while(!pilha.isEmpty()){
             // pop -> remove e retorna
             No atual = pilha.pop();
             contador++;
+            if(atual.esquerdo != null) pilha.push(atual.esquerdo);
+            if(atual.direito != null) pilha.push(atual.direito);
+        }
+        return contador;
+    }
 
-            if(atual.esquerdo != null){
-                pilha.push(atual.esquerdo);
-            }
-            if(atual.direito != null){
-                pilha.push(atual.direito);
-            }
+    /* Método para contar os nós folhas */
+    public int contadorDeFolhas(No raiz) {
+        if (raiz == null) return 0;
+        if (raiz.esquerdo == null && raiz.direito == null) return 1;
+        return contadorDeFolhas(raiz.esquerdo) + contadorDeFolhas(raiz.direito);
+    }
+
+    public int contadorDeFolhasIterativo(No raiz) {
+        if (raiz == null) return 0;
+
+        int contador = 0;
+        Stack<No> pilha = new Stack<>();
+        pilha.add(raiz);
+
+        while(!pilha.isEmpty()){
+            No atual = pilha.pop();
+            if(atual.esquerdo == null && atual.direito == null) contador++;
+            if(atual.esquerdo != null) pilha.push(atual.esquerdo);
+            if(atual.direito != null) pilha.push(atual.direito);
         }
         return contador;
     }
@@ -101,7 +116,7 @@ public class Arvore {
 
     /* Percorrendo os nós da Árvore em Pós-ordem */
     public void posOrdem(No no){
-        if( no != null){
+        if(no != null){
             posOrdem(no.esquerdo);
             posOrdem(no.direito);
             System.out.print(no.valor + " ");
@@ -110,7 +125,7 @@ public class Arvore {
 
     /* Implementando a Pos Ordem Iterativa*/
     public void posOrdemIterativo(No raiz){
-        if (raiz == null) { return; }
+        if (raiz == null) return;
 
         Stack<No> pilha1 = new Stack<>();
         Stack<No> pilha2 = new Stack<>();
@@ -136,30 +151,20 @@ public class Arvore {
 
     /* Percorrendo os nós da Árvore em Nível (Busca em Largura) */
     public void BuscaEmNivel(No raiz){
-        if (raiz == null) {
-            System.out.println("O nó está vazio");
-        }
-
+        if (raiz == null) return; // Não faz mais nada quando cai aqui
         //Criando fila para armazenar os nós
         Queue<No> fila = new LinkedList<>();
-
         // Adicionando o primeiro a ser adicionado
         fila.add(raiz);
-
         // Enquanto a fila não estiver vazia, percurso continua
         while (!fila.isEmpty()){
             // Removendo o primeiro valor e armazenamos no 'atual'
             No atual = fila.poll();
-
             //Imprimindo o valor do nó
             System.out.println(raiz.valor + " ");
+            if(atual.esquerdo != null) fila.add(atual.esquerdo);
+            if(atual.direito != null) fila.add(atual.direito);
 
-            if(atual.esquerdo != null){
-                fila.add(atual.esquerdo);
-            }
-            if(atual.direito != null){
-                fila.add(atual.direito);
-            }
         }
     }
 }
