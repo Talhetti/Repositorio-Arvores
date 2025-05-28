@@ -19,19 +19,19 @@ public class Main {
         arvore.preOrdem(arvore.raiz);
         System.out.println();
 
-        /*System.out.print("Pré-ordem iterativo: ");
+        System.out.print("Pré-ordem iterativo: ");
         arvore.preOrdemIterativa(arvore.raiz);
-        System.out.println();*/
+        System.out.println();
 
         System.out.print("Em ordem recursivo: ");
         arvore.emOrdem(arvore.raiz);
         System.out.println();
 
-        /*System.out.print("Em ordem iterativo: ");
+        System.out.print("Em ordem iterativo: ");
         arvore.emOrdemIterativo(arvore.raiz);
-        System.out.println();*/
+        System.out.println();
 
-        System.out.print("Pós-ordem recursivo: ");
+        System.out.print("Pós-ordem recursivo : ");
         arvore.posOrdem(arvore.raiz);
         System.out.println();
 
@@ -39,8 +39,8 @@ public class Main {
         arvore.posOrdemIterativo(arvore.raiz);
         System.out.println();
 
-        /*System.out.print("Busca em nível: ");
+        System.out.print("Busca em nível: ");
         arvore.BuscaEmNivel(arvore.raiz);
-        System.out.println();*/
+        System.out.println();
     }
 }

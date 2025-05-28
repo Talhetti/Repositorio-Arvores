@@ -70,22 +70,17 @@ public class Arvore {
 
     /*Implementando a preOrdem*/
     public void preOrdemIterativa(No raiz){
-        if(raiz == null){ return; }
+        if(raiz == null) return;
 
         Stack<No> pilha = new Stack<>();
-        pilha.add(raiz);
+        pilha.push(raiz);
 
         while(!pilha.isEmpty()){
             No atual = pilha.pop();
-            System.out.println(raiz.valor + " ");
+            System.out.println(atual.valor + " ");
 
-            if(atual.esquerdo != null){
-                pilha.push(atual.esquerdo);
-            }
-            if(atual.direito != null){
-                pilha.push(atual.direito);
-            }
-
+            if (atual.direito != null) pilha.push(atual.direito);
+            if (atual.esquerdo != null) pilha.push(atual.esquerdo);
         }
     }
 
@@ -101,17 +96,17 @@ public class Arvore {
     /* Implementando em Ordem Iterativo */
     public void emOrdemIterativo(No raiz){
         Stack<No> pilha = new Stack<>();
-        No atual = raiz;
 
-        while(atual != null || !pilha.isEmpty()){
-            while(atual != null){
-                pilha.push(atual);
-                atual = atual.esquerdo;
+        while(raiz != null || !pilha.isEmpty()){
+            while(raiz != null) {
+                pilha.push(raiz);
+                raiz = raiz.esquerdo;
             }
+            raiz = pilha.pop();
+            System.out.println(raiz.valor + " ");
+            raiz = raiz.direito;
         }
-        atual = pilha.pop();
-        System.out.println(atual.valor + " ");
-        atual = atual.direito;
+
     }
 
     /* Percorrendo os nós da Árvore em Pós-ordem */
@@ -161,10 +156,9 @@ public class Arvore {
             // Removendo o primeiro valor e armazenamos no 'atual'
             No atual = fila.poll();
             //Imprimindo o valor do nó
-            System.out.println(raiz.valor + " ");
+            System.out.println(atual.valor + " ");
             if(atual.esquerdo != null) fila.add(atual.esquerdo);
             if(atual.direito != null) fila.add(atual.direito);
-
         }
     }
 }
