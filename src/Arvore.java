@@ -37,7 +37,7 @@ public class Arvore {
     }
 
     /* Implementando o contador iterativo */
-    public int contadorIterativo(No raiz){
+    public int contadorIterativoComPilha(No raiz){
         if(raiz == null) return 0;
 
         //Criando o contador.

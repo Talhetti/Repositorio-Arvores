@@ -10,7 +10,8 @@ public class Main {
         arvore.raiz.direito.direito = new No(17);
 
         System.out.println("Contador recursivo: " + arvore.contador(arvore.raiz) );
-        System.out.println("Contador Iterativo: " + arvore.contadorIterativo(arvore.raiz) );
+        System.out.println("Contador Iterativo pilha: " + arvore.contadorIterativoComPilha(arvore.raiz) );
+        System.out.println("Contador Iterativo fila: " + arvore.contarNosComFila(arvore.raiz));
         System.out.println("Folha recursivo: " + arvore.contadorDeFolhas(arvore.raiz) );
         System.out.println("Folha iterativo: " + arvore.contadorDeFolhasIterativo(arvore.raiz) );
 
