@@ -38,7 +38,7 @@ public class Arvore {
 
     /* Implementando o contador iterativo */
     public int contadorIterativo(No raiz){
-        if(raiz == null){ return 0; }
+        if(raiz == null) return 0;
 
         //Criando o contador.
         int contador = 0;
