@@ -7,7 +7,6 @@ public class Main {
         arvore.raiz.direito = new No(15);
         arvore.raiz.esquerdo.esquerdo = new No(2);
         arvore.raiz.esquerdo.direito = new No(7);
-        arvore.raiz.direito.esquerdo = new No(12);
         arvore.raiz.direito.direito = new No(17);
 
         System.out.println("Contador recursivo: " + arvore.contador(arvore.raiz) );

@@ -15,6 +15,26 @@ public class Arvore {
         if (no == null) { return 0; }
         return 1 + contador(no.esquerdo) + contador(no.direito);
     }
+    /*contar nós com fila*/
+    public int contarNosComFila(No raiz){
+        if (raiz == null) return 0;
+
+        int contador = 0;
+        Queue<No> fila = new LinkedList<>();
+        fila.add(raiz);
+
+        while (!fila.isEmpty()) {
+            No no = fila.poll();
+            contador++;
+            if (no.esquerdo != null) {
+                fila.add(no.esquerdo);
+            }
+            if (no.direito != null) {
+                fila.add(no.direito);
+            }
+        }
+        return contador;
+    }
 
     /* Implementando o contador iterativo */
     public int contadorIterativo(No raiz){
