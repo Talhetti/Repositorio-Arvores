@@ -31,7 +31,7 @@ public class Main {
         arvore.emOrdemIterativo(arvore.raiz);
         System.out.println();
 
-        System.out.print("Pós-ordem recursivo : ");
+        System.out.print("Pós-ordem recursivo: ");
         arvore.posOrdem(arvore.raiz);
         System.out.println();
 

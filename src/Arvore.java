@@ -26,6 +26,7 @@ public class Arvore {
         while (!fila.isEmpty()) {
             No no = fila.poll();
             contador++;
+            if(no.esquerdo == null && no.direito == null) contador++;
             if (no.esquerdo != null) {
                 fila.add(no.esquerdo);
             }
