@@ -1,21 +1,9 @@
 public class NoAVL {
-    NoAVL esquerda;
-    NoAVL direita;
-    int info;
-    int altura;
+    NoAVL esquerda, direita;
+    int chave, altura;
 
-
-    int alturaAVL(NoAVL no){
-        if(no == null) {
-            return -1;
-        } else {
-            return no.altura;
-        }
+    public NoAVL(int valor, int altura) {
+        chave = valor;
+        altura = 1;
     }
-
-    int fatorBalanceamento(NoAVL no){
-        return alturaAVL(no.esquerda) - alturaAVL(no.direita);
-    }
-
-
 }
