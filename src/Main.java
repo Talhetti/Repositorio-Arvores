@@ -42,5 +42,17 @@ public class Main {
         System.out.print("Busca em nível: ");
         arvore.BuscaEmNivel(arvore.raiz);
         System.out.println();
+
+        System.out.println("------------------------");
+        ArvoreAVL arvoreavl = new ArvoreAVL();
+
+        int[] chaves = {10, 20, 30, 40, 50, 25};
+
+        for(int chave : chaves){
+            arvoreavl.no = arvoreavl.inserir(arvoreavl.no, chave);
+        }
+
+        System.out.println("Percurso em ordem da árvore AVL: ");
+        arvoreavl.percursoEmOrdem(arvoreavl.no);
     }
 }
