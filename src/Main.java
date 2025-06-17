@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        System.out.println("----------ARVORE BINARIA--------------");
         Arvore arvore = new Arvore();
 
         arvore.raiz = new No(10);
@@ -43,7 +44,7 @@ public class Main {
         arvore.BuscaEmNivel(arvore.raiz);
         System.out.println();
 
-        System.out.println("------------------------");
+        System.out.println("----------ARVORE AVL--------------");
         ArvoreAVL arvoreavl = new ArvoreAVL();
 
         int[] chaves = {10, 20, 30, 40, 50, 25};
@@ -54,5 +55,22 @@ public class Main {
 
         System.out.println("Percurso em ordem da árvore AVL: ");
         arvoreavl.percursoEmOrdem(arvoreavl.no);
+
+        System.out.println("--------------RUBRO NEGRO----------------");
+        ArvoreRubro arvoreRubro = new ArvoreRubro();
+
+        int[] chavesRubro = {10,20,30,15,5,25};
+        for(int key : chavesRubro){
+            arvoreRubro.insert(key);
+        }
+
+        System.out.println("Árvore após inserções: ");
+        arvoreRubro.inorder();
+
+        arvoreRubro.delete(15);
+        arvoreRubro.delete(10);
+
+        System.out.println("Árvore após deleções: ");
+        arvoreRubro.inorder();
     }
 }

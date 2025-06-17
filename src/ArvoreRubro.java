@@ -39,7 +39,7 @@ public class ArvoreRubro {
         y.pai = x;
     }
 
-    private void insert(int key){
+    public void insert(int key){
         NoRubro no = new NoRubro(key);
         no.esquerdo = no.direito = no.pai = NIL;
 
