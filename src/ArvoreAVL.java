@@ -22,7 +22,7 @@ public class ArvoreAVL {
         }
     }
 
-    NoAVL RotacaoDireita(NoAVL y){
+    private NoAVL RotacaoDireita(NoAVL y){
         NoAVL x = y.esquerda;
         NoAVL T2 = x.direita;
 
@@ -35,7 +35,7 @@ public class ArvoreAVL {
         return x;
     }
 
-    NoAVL RotacaoEsquerda(NoAVL x){
+    private NoAVL RotacaoEsquerda(NoAVL x){
         NoAVL y = x.direita;
         NoAVL T2 = y.esquerda;
 
@@ -82,4 +82,51 @@ public class ArvoreAVL {
 
         return no;
     }
+
+    /*public NoAVL remover(NoAVL no, int valor) {
+        if (no == null)
+            return null;
+
+        if (valor < no.chave) {
+            no.esquerda = remover(no.esquerda, valor);
+        } else if (valor > no.chave) {
+            no.direita = remover(no.direita, valor);
+        } else {
+            if (no.esquerda == null || no.direita == null) {
+                NoAVL temp = (no.esquerda != null) ? no.esquerda : no.direita;
+                no = temp;
+            } else {
+                NoAVL temp = no.direita;
+                while (temp.esquerda != null)
+                    temp = temp.esquerda;
+                no.chave = temp.chave;
+                no.direita = remover(no.direita, temp.chave);
+            }
+        }
+
+        if (no == null)
+            return null;
+
+        no.altura = Math.max(alturaAVL(no.esquerda), alturaAVL(no.direita)) + 1;
+
+        int balanceamento = fatorBalanceamento(no);
+
+        if (balanceamento > 1 && fatorBalanceamento(no.esquerda) >= 0)
+            return RotacaoDireita(no);
+
+        if (balanceamento > 1 && fatorBalanceamento(no.esquerda) < 0) {
+            no.esquerda = RotacaoEsquerda(no.esquerda);
+            return RotacaoDireita(no);
+        }
+
+        if (balanceamento < -1 && fatorBalanceamento(no.direita) <= 0)
+            return RotacaoEsquerda(no);
+
+        if (balanceamento < -1 && fatorBalanceamento(no.direita) > 0) {
+            no.direita = RotacaoDireita(no.direita);
+            return RotacaoEsquerda(no);
+        }
+
+        return no;
+    }*/
 }
